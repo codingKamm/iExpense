@@ -13,6 +13,8 @@ struct ContentView: View {
     
     @State private var showingSheet = false
     
+    @State private var altUser = AltUser(firstName: "E.M.", lastName: "Douglass")
+    
     var body: some View {
         VStack {
             Text("Your name is \(user.firstName) \(user.lastName)")
@@ -27,6 +29,13 @@ struct ContentView: View {
                 SheetView(name: "Douglass")
             })
             
+            Button("Save User") {
+                let encoder = JSONEncoder()
+                
+                if let data = try? encoder.encode(altUser) {
+                    UserDefaults.standard.set(data, forKey: "Userdata")
+                }
+            }
         }
         .padding()
     }
