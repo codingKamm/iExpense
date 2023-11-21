@@ -15,3 +15,9 @@ class User {
     var firstName = "E.M."
     var lastName = "Douglass"
 }
+
+struct AltUser: Codable {
+    let firstName: String
+    let lastName: String
+}
+//protocol called Codable: a protocol specifically for archiving and unarchiving data, which is a fancy way of saying “converting objects into plain text and back again.”
