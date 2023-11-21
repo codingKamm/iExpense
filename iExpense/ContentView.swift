@@ -21,23 +21,30 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(expenses.items) { item in
-                        Text(item.name)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                            Spacer()
+                            Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        }
                     }
-                    .onDelete(perform: removeItem)
-                }
-                .toolbar{
-                    Button("Add Expenses", systemImage: "plus"){
-//                        let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
-//                        expenses.items.append(expense)
-                        isShowingAddExpense = true
+                        .onDelete(perform: removeItem)
                     }
-                }
-            }// End of VStack
-            .navigationTitle("iExpense")
-            .sheet(isPresented: $isShowingAddExpense){
+                    .toolbar{
+                        Button("Add Expenses", systemImage: "plus"){
+                            //                        let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
+                            //                        expenses.items.append(expense)
+                            isShowingAddExpense = true
+                        }
+                    }
+                }// End of VStack
+                .navigationTitle("iExpense")
+                .sheet(isPresented: $isShowingAddExpense){
                     AddView(expenses: expenses)
                 }
- 
         }// End of Nav Statck
         
         
