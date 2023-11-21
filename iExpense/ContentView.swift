@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isShowingAddExpense = false
+    
    @State private var expenses = Expenses()
     
     func removeItem(at offsets: IndexSet) {
@@ -25,12 +27,17 @@ struct ContentView: View {
                 }
                 .toolbar{
                     Button("Add Expenses", systemImage: "plus"){
-                        let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
-                        expenses.items.append(expense)
+//                        let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
+//                        expenses.items.append(expense)
+                        isShowingAddExpense = true
                     }
                 }
             }// End of VStack
             .navigationTitle("iExpense")
+            .sheet(isPresented: $isShowingAddExpense){
+                    AddView(expenses: expenses)
+                }
+ 
         }// End of Nav Statck
         
         

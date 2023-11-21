@@ -19,6 +19,7 @@
 		69CC2BC92B0C211D00B75CCB /* DeleteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CC2BC82B0C211D00B75CCB /* DeleteListView.swift */; };
 		69CC2BCB2B0C28D200B75CCB /* TapCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CC2BCA2B0C28D200B75CCB /* TapCountView.swift */; };
 		69CC2BCD2B0C358600B75CCB /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CC2BCC2B0C358600B75CCB /* PracticeView.swift */; };
+		69CC2BCF2B0C401000B75CCB /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CC2BCE2B0C401000B75CCB /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		69CC2BC82B0C211D00B75CCB /* DeleteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListView.swift; sourceTree = "<group>"; };
 		69CC2BCA2B0C28D200B75CCB /* TapCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapCountView.swift; sourceTree = "<group>"; };
 		69CC2BCC2B0C358600B75CCB /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		69CC2BCE2B0C401000B75CCB /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				694AA1B22B0AABF8000B584F /* iExpenseApp.swift */,
-				694AA1B42B0AABF8000B584F /* ContentView.swift */,
-				69CC2BCC2B0C358600B75CCB /* PracticeView.swift */,
-				69CC2BCA2B0C28D200B75CCB /* TapCountView.swift */,
-				69CC2BC82B0C211D00B75CCB /* DeleteListView.swift */,
 				694AA1DC2B0C01E5000B584F /* LogicModel.swift */,
-				694AA1DE2B0C06A1000B584F /* SheetView.swift */,
+				694AA1B42B0AABF8000B584F /* ContentView.swift */,
+				69CC2BCE2B0C401000B75CCB /* AddView.swift */,
+				69CC2BD02B0C401800B75CCB /* Practice Views */,
 				694AA1B62B0AABFA000B584F /* Assets.xcassets */,
 				694AA1B82B0AABFA000B584F /* Preview Content */,
 			);
@@ -140,6 +140,17 @@
 				694AA1CF2B0AABFA000B584F /* iExpenseUITestsLaunchTests.swift */,
 			);
 			path = iExpenseUITests;
+			sourceTree = "<group>";
+		};
+		69CC2BD02B0C401800B75CCB /* Practice Views */ = {
+			isa = PBXGroup;
+			children = (
+				69CC2BCC2B0C358600B75CCB /* PracticeView.swift */,
+				69CC2BC82B0C211D00B75CCB /* DeleteListView.swift */,
+				694AA1DE2B0C06A1000B584F /* SheetView.swift */,
+				69CC2BCA2B0C28D200B75CCB /* TapCountView.swift */,
+			);
+			path = "Practice Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				694AA1B52B0AABF8000B584F /* ContentView.swift in Sources */,
 				694AA1DD2B0C01E5000B584F /* LogicModel.swift in Sources */,
 				69CC2BC92B0C211D00B75CCB /* DeleteListView.swift in Sources */,
+				69CC2BCF2B0C401000B75CCB /* AddView.swift in Sources */,
 				69CC2BCD2B0C358600B75CCB /* PracticeView.swift in Sources */,
 				694AA1DF2B0C06A1000B584F /* SheetView.swift in Sources */,
 				694AA1B32B0AABF8000B584F /* iExpenseApp.swift in Sources */,
