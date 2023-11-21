@@ -6,38 +6,34 @@
 //
 
 import SwiftUI
-import Observation
 
 struct ContentView: View {
-    @State private var user = User()
+   @State private var expenses = Expenses()
     
-    @State private var showingSheet = false
-    
-    @State private var altUser = AltUser(firstName: "E.M.", lastName: "Douglass")
+    func removeItem(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
+    }
     
     var body: some View {
-        VStack {
-            Text("Your name is \(user.firstName) \(user.lastName)")
-            
-            TextField("First Name", text: $user.firstName)
-            TextField("Last Name", text: $user.lastName)
-            
-            Button("Show Sheet"){
-                showingSheet.toggle()
-            }
-            .sheet(isPresented: $showingSheet, content: {
-                SheetView(name: "Douglass")
-            })
-            
-            Button("Save User") {
-                let encoder = JSONEncoder()
-                
-                if let data = try? encoder.encode(altUser) {
-                    UserDefaults.standard.set(data, forKey: "Userdata")
+        NavigationStack{
+            VStack {
+                List {
+                    ForEach(expenses.items) { item in
+                        Text(item.name)
+                    }
+                    .onDelete(perform: removeItem)
                 }
-            }
-        }
-        .padding()
+                .toolbar{
+                    Button("Add Expenses", systemImage: "plus"){
+                        let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
+                        expenses.items.append(expense)
+                    }
+                }
+            }// End of VStack
+            .navigationTitle("iExpense")
+        }// End of Nav Statck
+        
+        
     }
 }
 
